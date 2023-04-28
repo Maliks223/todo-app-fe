@@ -1,0 +1,73 @@
+@import "../../Variables/colors.scss";
+@import "../../Variables/mixins.scss";
+@import "../../Variables/fonts.scss";
+.navBar {
+  height: 80px;
+  color: $white;
+  background-color: $black;
+  display: flex;
+  justify-content: space-between;
+  padding: 70px 80px;
+  @media (max-width: 576px) {
+    padding: 69px 30px;
+  }
+  .left {
+    .title {
+      text-transform: uppercase;
+      @include fontStyles(normal, 700, 24px, 36px);
+      font-family: $font-family;
+    }
+
+    .decription {
+      text-transform: capitalize;
+      @include fontStyles(normal, 400, 12px, 18px);
+      opacity: 0.5;
+      font-family: $font-family;
+    }
+  }
+
+  .right {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    .theme-button-container {
+      margin-top: 10px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @media (max-width: 576px) {
+        display: none;
+      }
+      :hover{
+        cursor: pointer;
+      }
+    }
+    .user-image-container {
+      // background-color: green;
+      border:1px solid white;
+      width: 50px;
+      height: 50px;
+      border-radius: 52px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+.underline-container {
+  background-color: $black;
+  padding-bottom: 47px;
+
+  .underline {
+    height: 1px;
+    background-color: $white;
+    margin: 0 80px;
+    // margin-bottom: 40px;
+    opacity: 0.1;
+    @media (max-width: 576px) {
+      margin: 0 30px;
+    }
+  }
+}
