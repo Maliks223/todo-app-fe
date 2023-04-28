@@ -1,0 +1,13 @@
+@import "../../Variables/_colors.scss";
+@import "../../Variables/_mixins.scss";
+@import "../../Variables/_fonts.scss";
+
+.dashboard-container{
+    background-color: $black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 88px;
+    padding-right: 122px;
+}

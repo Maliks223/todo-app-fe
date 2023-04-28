@@ -1,0 +1,25 @@
+@import "../../Variables/_colors.scss";
+@import "../../Variables/_mixins.scss";
+@import "../../Variables/_fonts.scss";
+
+.todo-item-container {
+  margin-top: 18px;
+  margin-bottom: 18px;
+
+  .todo-item-checkbox {
+    cursor: pointer;
+    margin-right: 12px;
+    // background-color: $black;
+    &:hover {
+      //   border: 1px solid $black;
+    }
+  }
+
+  .todo-item {
+    @include fontStyles(normal, 400, 16px, 24px);
+    color: $dark-white;
+    max-width: 100px;
+    height: auto;
+    min-height: 100%;
+  }
+}
