@@ -1,0 +1,26 @@
+@import "../../Variables/colors.scss";
+@import "../../Variables/mixins.scss";
+@import "../../Variables/fonts.scss";
+
+.text-input-container {
+    width: 500px;
+    height: 80px;
+    background-color: $black;
+    border-radius: 10px;
+    border: 0;
+    padding: 28px 7px 28px 30px;
+    font-family: $font-family;
+    color: $dark-white;
+    @include fontStyles(normal, 400, 16px, 24px);
+    @media(max-width:768px){
+        width: 400px;
+        height: 70px;
+    }
+    @media(max-width:576px){
+        width: 250px;
+        height: 40px;
+    }
+    &:focus {
+      outline: 0;
+    }
+}
