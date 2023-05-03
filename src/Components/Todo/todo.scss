@@ -3,23 +3,56 @@
 @import "../../Variables/_fonts.scss";
 
 .todo-item-container {
-  margin-top: 18px;
-  margin-bottom: 18px;
+  margin: 18px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  word-wrap: break-word;
+
+  &.completed {
+    text-decoration: line-through;
+    text-decoration-color: $dark-white;
+  }
 
   .todo-item-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-height: 24px;
+    min-width: 24px;
     cursor: pointer;
-    margin-right: 12px;
-    // background-color: $black;
-    &:hover {
-      //   border: 1px solid $black;
+    background: $black;
+    border: 1.5px solid $white;
+    border-radius: 5px;
+    position: relative;
+    &:checked::after {
+      top: 0px;
+      border-radius: 4px;
+      position: absolute;
+      content: "✔";
+      color: white; // didin't use variable this color will be white in both themes
+      background-color: $blue;
+      padding: 2px 6px 2px 6px;
     }
   }
 
   .todo-item {
     @include fontStyles(normal, 400, 16px, 24px);
     color: $dark-white;
-    max-width: 100px;
-    height: auto;
-    min-height: 100%;
+    min-width: 100%;
+    margin-left: 12px;
+    padding-right: 12px;
+  }
+
+  .delete-todo-button {
+    background-color: $black;
+    outline: 0;
+    border: 0;
+
+    svg {
+      cursor: pointer;
+    }
   }
 }
