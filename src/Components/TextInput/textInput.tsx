@@ -1,4 +1,5 @@
 import "./textInput.scss";
+import { ChangeEvent } from "react";
 
 interface TextInputProps {
   value?: string;
@@ -6,6 +7,8 @@ interface TextInputProps {
   className?: string;
   type?: string;
   placeHolder?: string;
+  name?: string;
+  id?: string;
 }
 
 const TextInput = ({
@@ -14,6 +17,8 @@ const TextInput = ({
   className,
   type,
   placeHolder,
+  name,
+  id,
 }: TextInputProps) => {
   return (
     <input
@@ -22,6 +27,8 @@ const TextInput = ({
       value={value}
       onChange={onChange}
       placeholder={placeHolder}
+      name={name}
+      id={id}
     />
   );
 };

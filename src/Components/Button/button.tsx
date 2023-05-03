@@ -10,7 +10,7 @@ interface ButtonProps {
 const Button = ({ text, onClick, className, disabled }: ButtonProps) => {
   return (
     <button
-      className={`button ${className ? className : ""}`}
+      className="button"
       onClick={onClick}
       disabled={disabled}
     >

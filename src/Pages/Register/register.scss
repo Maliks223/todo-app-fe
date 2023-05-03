@@ -1,0 +1,48 @@
+@import "../../Variables/_colors.scss";
+@import "../../Variables/_mixins.scss";
+
+.register-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: calc(100vh - 189px);
+  width: 100%;
+
+  .register-page-title {
+    text-transform: capitalize;
+    margin-bottom: 56px;
+    color: $white;
+    opacity: 0.5;
+    @include fontStyles(normal, 400, 40px, 24px);
+  }
+
+  .register-page-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+
+    .register-login-navigator-container {
+      color: $white;
+      opacity: 0.5;
+      display: flex;
+      padding-left: 14px;
+      @include fontStyles(normal, 400, 16px, 24px);
+      align-self: flex-start;
+      margin: -25px 0;
+      .register-login-navigator-button {
+        color: $white;
+        opacity: 0.8;
+        @include fontStyles(normal, 400, 16px, 24px);
+        text-decoration: underline;
+        cursor: pointer;
+        background-color: transparent;
+        border: 0;
+      }
+    }
+
+    .register-page-btn {
+    }
+  }
+}
