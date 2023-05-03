@@ -30,8 +30,10 @@
       top: -190px;
       z-index: 1;
       width: 25%;
+      transform: scale(0.9);
       @media (max-width: 576px) {
         width: 90%;
+        transform: scale(0.7);
       }
       @media (min-width: 577px) {
         width: 50%;
