@@ -8,10 +8,11 @@
   align-items: center;
   height: calc(100vh - 189px);
   width: 100%;
+  position: relative;
 
   .register-page-title {
     text-transform: capitalize;
-    margin-bottom: 56px;
+    margin-bottom: 36px;
     color: $white;
     opacity: 0.5;
     @include fontStyles(normal, 400, 40px, 24px);
@@ -22,6 +23,39 @@
     flex-direction: column;
     align-items: center;
     gap: 50px;
+
+    .error-notice {
+      margin: 5px;
+      position: absolute;
+      top: -190px;
+      z-index: 1;
+      width: 25%;
+      @media (max-width: 576px) {
+        width: 90%;
+      }
+      @media (min-width: 577px) {
+        width: 50%;
+      }
+      // @media (min-width: 577px) {
+      //   width: 70%;
+      // }
+      .oaerror {
+        box-shadow: -1px -1px 21px -8px rgba(255, 255, 255, 0.523);
+        -webkit-box-shadow: -1px -1px 21px -8px rgba(255, 255, 255, 0.502);
+        -moz-box-shadow: -1px -1px 21px -8px rgba(255, 255, 255, 0.454);
+        background-color: $white;
+        padding: 20px;
+        border: 1px solid $white;
+        border-left-width: 5px;
+        border-radius: 3px;
+        margin: 10px auto;
+        font-size: 16px;
+        animation: bounce 0.5s;
+      }
+      .danger {
+        border-left-color: $red;
+      }
+    }
 
     .register-login-navigator-container {
       color: $white;
@@ -39,10 +73,29 @@
         cursor: pointer;
         background-color: transparent;
         border: 0;
+
+        &::before {
+          content: " .";
+          visibility: hidden;
+        }
       }
     }
 
     .register-page-btn {
     }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }

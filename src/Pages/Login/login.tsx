@@ -1,4 +1,4 @@
-import { useState, useEffect, ChangeEvent } from "react";
+import { useState, ChangeEvent } from "react";
 import { Link } from "react-router-dom";
 import TextInput from "../../Components/TextInput/textInput";
 import "./login.scss";
