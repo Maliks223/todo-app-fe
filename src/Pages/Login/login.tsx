@@ -3,9 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import TextInput from "../../Components/TextInput/textInput";
 import "./login.scss";
 import Button from "../../Components/Button/button";
-import axios from "axios";
-
-const API_URL = "http://localhost:5000/api/users/login";
+import { useLoginUserMutation } from "../../Store/Services/userService";
 
 interface LoginFormData {
   email: string;
@@ -24,13 +22,17 @@ interface ApiError {
 }
 
 function Login() {
+  const [login, { isLoading, error: loginError, data }] =
+    useLoginUserMutation();
+
   const [formData, setFormData] = useState<LoginFormData>({
     email: "",
     password: "",
   });
   const [error, setError] = useState<ApiError | null>(null);
+  console.log("🚀 ~ file: login.tsx:33 ~ Login ~ error:", error);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -43,14 +45,18 @@ function Login() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      const response = await axios.post<LoginResponse>(API_URL, formData);
-      localStorage.setItem("token", response.data.token);
-      setError(null);
-      navigate("/");
-      setFormData({
-        email: "",
-        password: "",
+      login({
+        email: formData.email,
+        password: formData.password,
       });
+      // const response = await axios.post<LoginResponse>(API_URL, formData);
+      // localStorage.setItem("token", response.data.token);
+      // setError(null);
+      // navigate("/");
+      // setFormData({
+      //   email: "",
+      //   password: "",
+      // });
     } catch (error: any) {
       setError(error.response.data);
     }
